@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>app-ear</artifactId>
-  <packaging>war</packaging>
+  <packaging>ear</packaging>
   
   <dependencies>
 		<dependency>
