@@ -117,10 +117,9 @@
 		</dependency>
 	</dependencies>
 	<modules>
-		<module>app-module</module>
+		<module>app-model</module>
 		<module>app-resource</module>
 		<module>app-resource-war</module>
 		<module>app-ear</module>
-		<module>app-model</module>
 	</modules>
 </project>
