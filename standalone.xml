@@ -151,7 +151,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jndi-name="java:jboss/datasources/movies" pool-name="movies-pool" enabled="true" use-java-context="true">
+                <datasource jndi-name="java:jboss/datasources/movie" pool-name="movies-pool" enabled="true" use-java-context="true">
                     <connection-url>jdbc:postgresql://localhost/movies</connection-url>
                     <driver>postgres</driver>
                     <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
