@@ -2,14 +2,17 @@
 
 This is a full sample of a Wildfly application, using JPA, EJB'S , JAX-RS
 
-# REST Api
+## REST Api
 
 @GET
 http://{yourhost}/api/movies
+
 @GET
 http://{yourhost}/api/movies/{id}
+
 @POST
 http://{yourhost}/api/movies
+
 @PUT
 http://{yourhost}/api/movies/{id}
 
@@ -19,7 +22,7 @@ JSON to post/put
 }
 
 
-# Database
+## Database
 
 Database should contain one table called "Movie", the provided standalone configuration targets POSTGREsql database
 
