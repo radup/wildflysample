@@ -122,4 +122,33 @@
 		<module>app-resource-war</module>
 		<module>app-ear</module>
 	</modules>
+
+<profiles>
+	<profile>
+ 	<id>openshift</id>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<defaultLibBundleDir>lib/</defaultLibBundleDir>
+					<skinnyWars>true</skinnyWars>
+					<modules>
+						<webModule>
+							<groupId>com.wildflysample</groupId>
+							<artifactId>app-resource-war</artifactId>
+							<contextRoot>/</contextRoot>
+						</webModule>
+						<ejbModule>
+							<groupId>com.wildflysample</groupId>
+							<artifactId>app-model</artifactId>
+						</ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	</profile>
+	</profiles>
 </project>
