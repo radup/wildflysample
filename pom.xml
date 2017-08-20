@@ -3,7 +3,7 @@
   <groupId>com.wildflysample</groupId>
   <artifactId>sample-app</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>ear</packaging>
+  <packaging>pom</packaging>
   
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -123,9 +123,6 @@
 		<module>app-ear</module>
 	</modules>
 
-<profiles>
-	<profile>
- 	<id>openshift</id>
 	<build>
 		<plugins>
 			<plugin>
@@ -149,6 +146,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	</profile>
-	</profiles>
+	
 </project>
