@@ -34,7 +34,9 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-ear-plugin</artifactId>				
-					<configuration>						
+					<configuration>
+						<outputDirectory>deployments</outputDirectory>
+		            	<warName>ROOT</warName>
 						<defaultLibBundleDir>lib/</defaultLibBundleDir>
 						<skinnyWars>true</skinnyWars>
 						<modules>
