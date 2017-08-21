@@ -151,7 +151,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <!--<datasource jndi-name="java:jboss/datasources/employee" pool-name="employee-pool" enabled="true" use-java-context="true">
+                <datasource jndi-name="java:jboss/datasources/employee" pool-name="employee-pool" enabled="true" use-java-context="true">
                     <connection-url>jdbc:postgresql://${env.OPENSHIFT_MYSQL_DB_HOST}:${env.OPENSHIFT_MYSQL_DB_PORT}/employee</connection-url>
                     <driver>postgres</driver>
                     <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
@@ -170,14 +170,14 @@
                     <statement>
                         <prepared-statement-cache-size>32</prepared-statement-cache-size>
                     </statement>
-                </datasource>-->
+                </datasource>
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
-                    <!--<driver name="postgres" module="org.postgres">
+                    <driver name="postgres" module="org.postgres">
                         <xa-datasource-class>org.postgresql.Driver</xa-datasource-class>
-                    </driver>-->
+                    </driver>
                 </drivers>
             </datasources>
         </subsystem>
