@@ -151,8 +151,8 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jndi-name="java:jboss/datasources/employee" pool-name="employee-pool" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:postgresql://${env.OPENSHIFT_MYSQL_DB_HOST}:${env.OPENSHIFT_MYSQL_DB_PORT}/employee</connection-url>
+                <datasource jndi-name="java:jboss/datasources/movie" pool-name="movies-pool" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:postgresql://localhost/movies</connection-url>
                     <driver>postgres</driver>
                     <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
                     <pool>
@@ -164,8 +164,7 @@
                         <allow-multiple-users/>
                     </pool>
                      <security>
-                        <user-name>${env.OPENSHIFT_MYSQL_DB_USERNAME}</user-name>
-                        <password>${env.OPENSHIFT_MYSQL_DB_PASSWORD}</password>
+                        <user-name>tiago</user-name>
                     </security>
                     <statement>
                         <prepared-statement-cache-size>32</prepared-statement-cache-size>
