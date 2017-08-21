@@ -36,7 +36,6 @@
 					<artifactId>maven-ear-plugin</artifactId>				
 					<configuration>
 						<outputDirectory>deployments</outputDirectory>
-		            	<warName>ROOT</warName>
 						<defaultLibBundleDir>lib/</defaultLibBundleDir>
 						<skinnyWars>true</skinnyWars>
 						<modules>
