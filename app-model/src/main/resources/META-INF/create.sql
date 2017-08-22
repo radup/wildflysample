@@ -1,4 +1,1 @@
-create table Movie (
-	id bigserial not null primary key,
-	name varchar(25) not null unique
-)
+CREATE TABLE MOVIE(ID INTEGER not null primary key, NAME VARCHAR(25) not null)
