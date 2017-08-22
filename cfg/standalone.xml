@@ -143,7 +143,7 @@
         <subsystem xmlns="urn:jboss:domain:bean-validation:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:4.0">
             <datasources>
-                <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
+                <datasource jndi-name="java:jboss/datasources/movie" pool-name="ExampleDS" enabled="true" use-java-context="true">
                     <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
                     <driver>h2</driver>
                     <security>
@@ -151,31 +151,9 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jndi-name="java:jboss/datasources/movie" pool-name="movies-pool" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:postgresql://localhost/movies</connection-url>
-                    <driver>postgres</driver>
-                    <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
-                    <pool>
-                        <min-pool-size>5</min-pool-size>
-                        <max-pool-size>30</max-pool-size>
-                        <prefill>true</prefill>
-                        <use-strict-min>false</use-strict-min>
-                        <flush-strategy>IdleConnections</flush-strategy>
-                        <allow-multiple-users/>
-                    </pool>
-                     <security>
-                        <user-name>tiago</user-name>
-                    </security>
-                    <statement>
-                        <prepared-statement-cache-size>32</prepared-statement-cache-size>
-                    </statement>
-                </datasource>
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
-                    </driver>
-                    <driver name="postgres" module="org.postgres">
-                        <xa-datasource-class>org.postgresql.Driver</xa-datasource-class>
                     </driver>
                 </drivers>
             </datasources>
