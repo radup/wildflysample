@@ -8,7 +8,7 @@
 		<jta-data-source>java:jboss/datasources/movie</jta-data-source>
 		<properties>
 			<property name="hibernate.show_sql" value="false" />
-			<property name="javax.persistence.schema-generation.database.action" value=${env.CREATE_DB}/>
+			<property name="javax.persistence.schema-generation.database.action" value="${env.CREATE_DB}"/>
 			<property name="javax.persistence.schema-generation.create-source" value="script"/>
             <property name="javax.persistence.schema-generation.drop-source" value="script"/>
             <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/create.sql"/>
