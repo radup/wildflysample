@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "Movie")
+@Table(name = "MOVIE")
 public class Movie implements Serializable {
 
 	private static final long serialVersionUID = 2657551019023598969L;
