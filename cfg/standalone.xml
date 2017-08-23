@@ -143,7 +143,7 @@
         <subsystem xmlns="urn:jboss:domain:bean-validation:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:4.0">
             <datasources>
-                <datasource jndi-name="java:jboss/datasources/movie" pool-name="movies-pool" enabled="true" use-java-context="true">
+                <datasource jndi-name="java:jboss/datasources/movieh2" pool-name="movies-pool-h2" enabled="true" use-java-context="true">
                     <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
                     <driver>h2</driver>
                     <security>
@@ -151,9 +151,29 @@
                         <password>sa</password>
                     </security>
                 </datasource>
+                <datasource jndi-name="java:jboss/datasources/movie" pool-name="movies-pool" enabled="true" use-java-context="true" use-ccm="true">
+                    <connection-url>jdbc:mysql://${env.OPENSHIFT_MYSQL_DB_HOST}:${env.OPENSHIFT_MYSQL_DB_PORT}/${env.OPENSHIFT_MYSQL_DB_NAME}</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                      <user-name>${env.OPENSHIFT_MYSQL_DB_USERNAME}</user-name>
+                      <password>${env.OPENSHIFT_MYSQL_DB_PASSWORD}</password>
+                    </security>
+                    <validation>
+                        <check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
+                        <background-validation>true</background-validation>
+                        <background-validation-millis>60000</background-validation-millis>
+                        <!--<validate-on-match>true</validate-on-match>-->
+                    </validation>
+                    <pool>
+                        <flush-strategy>IdleConnections</flush-strategy>
+                    </pool>
+                </datasource>
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="mysql" module="com.mysql.jdbc">
+                        <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
                     </driver>
                 </drivers>
             </datasources>
